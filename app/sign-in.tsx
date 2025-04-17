@@ -1,9 +1,31 @@
+import { PATHS } from "@/src/shared/constants";
+import { login } from "@/src/shared/database";
+import { useGlobalContext } from "@/src/shared/providers";
 import { icons, images } from "@/src/shared/ui";
-import { Image, ScrollView, Text, TouchableOpacity, View } from "react-native";
+import { Redirect } from "expo-router";
+import {
+  Alert,
+  Image,
+  ScrollView,
+  Text,
+  TouchableOpacity,
+  View,
+} from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
 export default function SignInScreen() {
-  const handleLogin = () => {};
+  const { refetch, loading, isLoggedIn } = useGlobalContext();
+  if (!loading && isLoggedIn) return <Redirect href={PATHS.MAIN} />;
+  const handleLogin = async () => {
+    const result = await login();
+
+    if (result) {
+      refetch({});
+      // console.log("Login successful", result);
+    } else {
+      Alert.alert("Login failed");
+    }
+  };
   return (
     <SafeAreaView className="bg-white h-full">
       <ScrollView contentContainerClassName="h-full">
