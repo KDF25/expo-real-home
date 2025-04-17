@@ -32,7 +32,7 @@ import wifi from "@/assets/icons/wifi.png";
 import location from "@/assets/icons/location.png";
 import edit from "@/assets/icons/edit.png";
 
-export default {
+export const icons = {
   google,
   home,
   search,
