@@ -1,38 +1,33 @@
-import { Colors } from "@/src/shared/constants/Colors";
-import { useColorScheme } from "@/src/shared/hooks/useColorScheme.web";
+import { allTabs, TabIcon } from "@/src/widgets/tabBar";
 import { Tabs } from "expo-router";
-import React from "react";
-import { Platform } from "react-native";
 
 export default function TabLayout() {
-  const colorScheme = useColorScheme();
-
   return (
     <Tabs
       screenOptions={{
-        tabBarActiveTintColor: Colors[colorScheme ?? "light"].tint,
-        headerShown: false,
-        tabBarStyle: Platform.select({
-          ios: {
-            // Use a transparent background on iOS to show the blur effect
-            position: "absolute",
-          },
-          default: {},
-        }),
+        tabBarShowLabel: false,
+        tabBarStyle: {
+          backgroundColor: "white",
+          position: "absolute",
+          borderTopColor: "#0061FF1A",
+          borderTopWidth: 1,
+          minHeight: 70,
+        },
       }}
     >
-      <Tabs.Screen
-        name="index"
-        options={{
-          title: "Home",
-        }}
-      />
-      <Tabs.Screen
-        name="explore"
-        options={{
-          title: "Explore",
-        }}
-      />
+      {allTabs.map((tab) => (
+        <Tabs.Screen
+          key={tab.name}
+          name={tab.name}
+          options={{
+            title: tab.title,
+            headerShown: false,
+            tabBarIcon: ({ focused }) => (
+              <TabIcon icon={tab.icon} focused={focused} title={tab.title} />
+            ),
+          }}
+        />
+      ))}
     </Tabs>
   );
 }
