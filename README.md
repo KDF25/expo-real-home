@@ -1,50 +1,75 @@
-# Welcome to your Expo app 👋
+# Real Home App 🏠
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+**Real Home** is a modern real estate app that helps users find and book properties. It features advanced search, filters, and a seamless user experience.
 
-## Get started
+---
 
-1. Install dependencies
+## 🚀 Features
 
-   ```bash
-   npm install
-   ```
+- **Property Search**: Filter by type, price, and more.
+- **User Reviews and Ratings**: View feedback for each property.
+- **Image Galleries**: Browse property photos.
+- **User Profile**: Manage your account and settings.
+- **Google Authentication**: Easy login via OAuth2.
+- **Interactive UI**: Built with TailwindCSS and NativeWind.
 
-2. Start the app
+---
 
-   ```bash
-    npx expo start
-   ```
+## 🛠️ Installation and Setup
 
-In the output, you'll find options to open the app in a
-
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
-
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
-
-## Get a fresh project
-
-When you're ready, run:
-
+### 1. Install dependencies
 ```bash
-npm run reset-project
+npm install
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+### 2. Start the project
+```bash
+npx expo start
+```
 
-## Learn more
+You can run the app on:
+- **Android**: Emulator or physical device.
+- **iOS**: Simulator or physical device.
+- **Web**: Directly in your browser.
 
-To learn more about developing your project with Expo, look at the following resources:
+---
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+## 🧰 Technologies
 
-## Join the community
+- **React Native**: Core framework for the app.
+- **Expo**: Simplifies development and builds.
+- **NativeWind**: TailwindCSS for React Native.
+- **Appwrite**: Backend for data management and authentication.
+- **Expo Router**: File-based routing.
 
-Join our community of developers creating universal apps.
+---
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+## 🗄️ Backend: Appwrite
+
+This project uses **Appwrite** as the backend for managing data and authentication. Below are the key collections and their purposes:
+
+### Collections:
+- **Properties**: Stores property details.
+- **Agents**: Stores information about real estate agents.
+- **Galleries**: Manages property images.
+- **Reviews**: Stores user reviews and ratings.
+
+### Environment Variables:
+Create a `.env.local` file in the root of the project and add the following:
+
+```env
+EXPO_PUBLIC_APPWRITE_PROJECT_ID=
+EXPO_PUBLIC_APPWRITE_ENDPOINT=
+EXPO_PUBLIC_APPWRITE_DATABASE_ID=
+EXPO_PUBLIC_APPWRITE_AGENTS_COLLECTION_ID=
+EXPO_PUBLIC_APPWRITE_GALLERIES_COLLECTION_ID=
+EXPO_PUBLIC_APPWRITE_REVIEWS_COLLECTION_ID=
+EXPO_PUBLIC_APPWRITE_PROPERTIES_COLLECTION_ID=
+```
+
+### Appwrite Setup:
+1. Install Appwrite on your server or use [Appwrite Cloud](https://appwrite.io/cloud).
+2. Create a project and configure the collections listed above.
+3. Update the environment variables in your `.env.local` file.
+
+---
