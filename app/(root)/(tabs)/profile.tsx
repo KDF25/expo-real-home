@@ -1,51 +1,16 @@
-import { allSettings } from "@/src/features/settingsList";
+import { allSettings, SettingsItem } from "@/src/features/settingsItem";
 import { logout } from "@/src/shared/database";
 import { useGlobalContext } from "@/src/shared/providers";
 import { icons } from "@/src/shared/ui";
 import {
   Alert,
   Image,
-  ImageSourcePropType,
   ScrollView,
   Text,
   TouchableOpacity,
-  View,
+  View
 } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
-
-interface ISettingsItemProps {
-  icon: ImageSourcePropType;
-  title: string;
-  onPress?: () => void;
-  textStyle?: string;
-  showArrow?: boolean;
-}
-
-export const SettingsItem = ({
-  icon,
-  title,
-  onPress,
-  textStyle,
-  showArrow = true,
-}: ISettingsItemProps) => {
-  return (
-    <TouchableOpacity
-      onPress={onPress}
-      className="flex flex-row items-center justify-between py-3"
-    >
-      <View className="flex flex-row items-center gap-3">
-        <Image source={icon} className="size-6" />
-        <Text
-          className={`text-lg font-rubik-medium text-black-300 ${textStyle}`}
-        >
-          {title}
-        </Text>
-      </View>
-
-      {showArrow && <Image source={icons.rightArrow} className="size-5" />}
-    </TouchableOpacity>
-  );
-};
 
 export default function ProfileScreen() {
   const { user, refetch } = useGlobalContext();
@@ -59,6 +24,7 @@ export default function ProfileScreen() {
       Alert.alert("Error", "Failed to logout");
     }
   };
+
   return (
     <SafeAreaView className="h-full bg-white">
       <ScrollView
