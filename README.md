@@ -4,6 +4,37 @@
 
 ---
 
+## 🎥 Live Demo
+
+[▶️ Watch Demo Video](./demo/live-demo.mp4)
+
+Click the link above to see the app in action.
+
+---
+
+## 🖼️ Screenshots
+
+👉 [See All Screenshots](./demo/)
+
+<table>
+  <tr>
+    <td align="center">
+      <img src="./demo/screen-home.png" width="80%"/><br/>
+      <strong>🏠 Home Screen</strong>
+    </td>
+    <td align="center">
+      <img src="./demo/screen-property.png" width="80%"/><br/>
+      <strong>🏘️ Property Screen</strong>
+    </td>
+    <td align="center">
+      <img src="./demo/screen-profile.png" width="80%"/><br/>
+      <strong>👤 Profile Screen</strong>
+    </td>
+  </tr>
+</table>
+
+---
+
 ## 🚀 Features
 
 - **Property Search**: Filter by type, price, and more.

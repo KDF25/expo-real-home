@@ -15,7 +15,8 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.kdf25.realhome"
     },
     "web": {
       "bundler": "metro",
@@ -49,6 +50,15 @@
     ],
     "experiments": {
       "typedRoutes": true
-    }
+    },
+    "extra": {
+      "router": {
+        "origin": false
+      },
+      "eas": {
+        "projectId": "3adaa3f3-14e2-4a63-97c5-e1cb0eb04a04"
+      }
+    },
+    "owner": "kdf25"
   }
 }
